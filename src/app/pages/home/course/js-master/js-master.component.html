@@ -1,0 +1,531 @@
+<div class="row">
+    <div class="col-md-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <span class="badge badge-secondary">
+                        Home
+                    </span>
+                </li>
+                <li class="breadcrumb-item">
+                    <span class="badge badge-secondary">
+                        Cursos
+                    </span>
+                </li>
+                <li class="breadcrumb-item">
+                    <span class="badge badge-success">
+                        JS Master
+                    </span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+    <div class="container">
+        <h2>Curso de <b>{{infoCourse.nombre}}</b> </h2>
+        <p><b><em>{{infoCourse.descripcion}}</em></b>  attribute makes sure that all collapsible elements under the specified parent
+            will be closed when one of the collapsible item is shown.</p>
+        <!-- ACORDEON -->
+        <div id="accordion">
+            <!-- SEMANA 1 -->
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseSemana1">
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        Semana 1
+                    </a>
+                </div>
+                <div id="collapseSemana1" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            Esta semana tratamos lo siguientes temas: Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                        </p>
+                        <br>
+                        <div class="row">
+                            <!-- Clase 1 -->
+                            <div class="container mt-3 col-lg-6">
+                                <h6><b>Primera Clase</b></h6>
+                                <p>En esta clase vimos on the button to toggle between showing and hiding content.</p>
+                                <ul>
+                                    <li>on the button to toggle betwee.</li>
+                                    <li>showing and hiding content</li>
+                                </ul>
+
+                                <button type="button" class="btn btn-js-master btn-block" data-toggle="collapse"
+                                    data-target="#video1Semana1">Material Clase 1</button>
+                                <div id="video1Semana1" class="collapse row">
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                        <!-- <h6 class="card-title"><i class="fa fa-video-camera" aria-hidden="true"></i>
+                                                <b> Video</b></h6> -->
+                                                <div class="tarjeta">
+                                                    <a href="#">
+                                                        <span>
+                                                          <i class="fa fa-video-camera fa-3x" aria-hidden="true"></i>
+                                                        </span>
+                                                        <span><h5><b>Video</b></h5></span>
+                                                      </a>
+                                                      <p class="card-text">Drive de Google</p>
+                                                    </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                 <!-- <h6 class="card-title"><i class="fa fa-code" aria-hidden="true"></i>
+                                                <b> Ejercicio</b></h6>
+                                            <p class="card-text">Ejemplo de JS Vanilla</p> -->
+                                            <div class="tarjeta">
+                                                <a href="#">
+                                                    <span>
+                                                      <i class="fa fa-code fa-3x" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span><h5><b>Ejercicio</b></h5></span>
+                                                  </a>
+                                                  <p class="card-text">Ejemplo de JS Vanilla</p>
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                          <!-- <h6 class="card-title"><i class="fa fa-archive" aria-hidden="true"></i>
+                                                <b> Archivos</b></h6>
+                                            <p class="card-text">Contiene: Presentación en PDF </p> -->
+                                            <div class="tarjeta">
+                                                <a href="#">
+                                                    <span>
+                                                      <i class="fa fa-archive fa-3x" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span><h5><b>Archivos</b></h5></span>
+                                                  </a>
+                                                  <p class="card-text">Contiene: Presentación en PDF</p>
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- FIN CARD -->
+                                </div>
+                                <!-- FIN CARDS -->
+                            </div>
+                            <!-- Clase 2 -->
+                            <div class="container mt-3 col-lg-6">
+                                <h6><b>Segunda Clase</b></h6>
+                                <p>En esta clase vimos on the button to toggle between showing and hiding content.</p>
+                                <ul>
+                                    <li>on the button to toggle betwee.</li>
+                                    <li>showing and hiding content</li>
+                                </ul>
+
+                                <button type="button" class="btn btn-js-master btn-block" data-toggle="collapse"
+                                    data-target="#video2Semana1">Material Clase 2</button>
+                                <div id="video2Semana1" class="collapse row">
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                            <!-- <h6 class="card-title"><i class="fa fa-video-camera" aria-hidden="true"></i>
+                                                <b> Video</b></h6> -->
+                                                <div class="tarjeta">
+                                                    <a href="#">
+                                                        <span>
+                                                          <i class="fa fa-video-camera fa-3x" aria-hidden="true"></i>
+                                                        </span>
+                                                        <span><h5><b>Video</b></h5></span>
+                                                      </a>
+                                                      <p class="card-text">Drive de Google</p>
+                                                    </div>
+                                                
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                            <!-- <h6 class="card-title"><i class="fa fa-code" aria-hidden="true"></i>
+                                                <b> Ejercicio</b></h6>
+                                            <p class="card-text">Ejemplo de JS Vanilla</p> -->
+                                            <div class="tarjeta">
+                                                <a href="#">
+                                                    <span>
+                                                      <i class="fa fa-code fa-3x" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span><h5><b>Ejercicio</b></h5></span>
+                                                  </a>
+                                                  <p class="card-text">Ejemplo de JS Vanilla</p>
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                            <!-- <h6 class="card-title"><i class="fa fa-archive" aria-hidden="true"></i>
+                                                <b> Archivos</b></h6>
+                                            <p class="card-text">Contiene: Presentación en PDF </p> -->
+                                            <div class="tarjeta">
+                                                <a href="#">
+                                                    <span>
+                                                      <i class="fa fa-archive fa-3x" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span><h5><b>Archivos</b></h5></span>
+                                                  </a>
+                                                  <p class="card-text">Contiene: Presentación en PDF</p>
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- FIN CARD -->
+                                </div>
+                                <!-- FIN CARDS -->
+                            </div>
+                            <!-- FIN CLASE 2 -->
+                        </div>
+                        <!-- FIN CONTENEDOR -->
+                    </div>
+                    <!-- FIN ACORDEON BOODY -->
+                </div>
+                <!-- FIN COLLABSE -->
+            </div>
+            <!-- SEMANA 2 -->
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseSemana2">
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        Semana 2
+                    </a>
+                </div>
+                <div id="collapseSemana2" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            Esta semana tratamos lo siguientes temas: Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                        </p>
+                        <br>
+                        <div class="row">
+                            <!-- Clase 1 -->
+                            <div class="container mt-3 col-lg-6">
+                                <h6><b>Primera Clase</b></h6>
+                                <p>En esta clase vimos on the button to toggle between showing and hiding content.</p>
+                                <ul>
+                                    <li>on the button to toggle betwee.</li>
+                                    <li>showing and hiding content</li>
+                                </ul>
+
+                                <button type="button" class="btn btn-js-master btn-block" data-toggle="collapse"
+                                    data-target="#video1Semana2">Material Clase 1</button>
+                                <div id="video1Semana2" class="collapse row">
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                        <!-- <h6 class="card-title"><i class="fa fa-video-camera" aria-hidden="true"></i>
+                                                <b> Video</b></h6> -->
+                                                <div class="tarjeta">
+                                                    <a href="#">
+                                                        <span>
+                                                          <i class="fa fa-video-camera fa-3x" aria-hidden="true"></i>
+                                                        </span>
+                                                        <span><h5><b>Video</b></h5></span>
+                                                      </a>
+                                                      <p class="card-text">Drive de Google</p>
+                                                    </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                 <!-- <h6 class="card-title"><i class="fa fa-code" aria-hidden="true"></i>
+                                                <b> Ejercicio</b></h6>
+                                            <p class="card-text">Ejemplo de JS Vanilla</p> -->
+                                            <div class="tarjeta">
+                                                <a href="#">
+                                                    <span>
+                                                      <i class="fa fa-code fa-3x" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span><h5><b>Ejercicio</b></h5></span>
+                                                  </a>
+                                                  <p class="card-text">Ejemplo de JS Vanilla</p>
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                          <!-- <h6 class="card-title"><i class="fa fa-archive" aria-hidden="true"></i>
+                                                <b> Archivos</b></h6>
+                                            <p class="card-text">Contiene: Presentación en PDF </p> -->
+                                            <div class="tarjeta">
+                                                <a href="#">
+                                                    <span>
+                                                      <i class="fa fa-archive fa-3x" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span><h5><b>Archivos</b></h5></span>
+                                                  </a>
+                                                  <p class="card-text">Contiene: Presentación en PDF</p>
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- FIN CARD -->
+                                </div>
+                                <!-- FIN CARDS -->
+                            </div>
+                            <!-- Clase 2 -->
+                            <div class="container mt-3 col-lg-6">
+                                <h6><b>Segunda Clase</b></h6>
+                                <p>En esta clase vimos on the button to toggle between showing and hiding content.</p>
+                                <ul>
+                                    <li>on the button to toggle betwee.</li>
+                                    <li>showing and hiding content</li>
+                                </ul>
+
+                                <button type="button" class="btn btn-js-master btn-block" data-toggle="collapse"
+                                    data-target="#video2Semana2">Material Clase 2</button>
+                                <div id="video2Semana2" class="collapse row">
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                            <!-- <h6 class="card-title"><i class="fa fa-video-camera" aria-hidden="true"></i>
+                                                <b> Video</b></h6> -->
+                                                <div class="tarjeta">
+                                                    <a href="#">
+                                                        <span>
+                                                          <i class="fa fa-video-camera fa-3x" aria-hidden="true"></i>
+                                                        </span>
+                                                        <span><h5><b>Video</b></h5></span>
+                                                      </a>
+                                                      <p class="card-text">Drive de Google</p>
+                                                    </div>
+                                                
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                            <!-- <h6 class="card-title"><i class="fa fa-code" aria-hidden="true"></i>
+                                                <b> Ejercicio</b></h6>
+                                            <p class="card-text">Ejemplo de JS Vanilla</p> -->
+                                            <div class="tarjeta">
+                                                <a href="#">
+                                                    <span>
+                                                      <i class="fa fa-code fa-3x" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span><h5><b>Ejercicio</b></h5></span>
+                                                  </a>
+                                                  <p class="card-text">Ejemplo de JS Vanilla</p>
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                            <!-- <h6 class="card-title"><i class="fa fa-archive" aria-hidden="true"></i>
+                                                <b> Archivos</b></h6>
+                                            <p class="card-text">Contiene: Presentación en PDF </p> -->
+                                            <div class="tarjeta">
+                                                <a href="#">
+                                                    <span>
+                                                      <i class="fa fa-archive fa-3x" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span><h5><b>Archivos</b></h5></span>
+                                                  </a>
+                                                  <p class="card-text">Contiene: Presentación en PDF</p>
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- FIN CARD -->
+                                </div>
+                                <!-- FIN CARDS -->
+                            </div>
+                            <!-- FIN CLASE 2 -->
+                        </div>
+                        <!-- FIN CONTENEDOR -->
+                    </div>
+                    <!-- FIN ACORDEON BOODY -->
+                </div>
+                <!-- FIN COLLABSE -->
+            </div>
+            <!-- SEMANA 3 -->
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseSemana3">
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        Semana 3
+                    </a>
+                </div>
+                <div id="collapseSemana3" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>
+                            Esta semana tratamos lo siguientes temas: Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                        </p>
+                        <br>
+                        <div class="row">
+                            <!-- Clase 1 -->
+                            <div class="container mt-3 col-lg-6">
+                                <h6><b>Primera Clase</b></h6>
+                                <p>En esta clase vimos on the button to toggle between showing and hiding content.</p>
+                                <ul>
+                                    <li>on the button to toggle betwee.</li>
+                                    <li>showing and hiding content</li>
+                                </ul>
+
+                                <button type="button" class="btn btn-js-master btn-block" data-toggle="collapse"
+                                    data-target="#video1Semana3">Material Clase 1</button>
+                                <div id="video1Semana3" class="collapse row">
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                        <!-- <h6 class="card-title"><i class="fa fa-video-camera" aria-hidden="true"></i>
+                                                <b> Video</b></h6> -->
+                                                <div class="tarjeta">
+                                                    <a href="#">
+                                                        <span>
+                                                          <i class="fa fa-video-camera fa-3x" aria-hidden="true"></i>
+                                                        </span>
+                                                        <span><h5><b>Video</b></h5></span>
+                                                      </a>
+                                                      <p class="card-text">Drive de Google</p>
+                                                    </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                 <!-- <h6 class="card-title"><i class="fa fa-code" aria-hidden="true"></i>
+                                                <b> Ejercicio</b></h6>
+                                            <p class="card-text">Ejemplo de JS Vanilla</p> -->
+                                            <div class="tarjeta">
+                                                <a href="#">
+                                                    <span>
+                                                      <i class="fa fa-code fa-3x" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span><h5><b>Ejercicio</b></h5></span>
+                                                  </a>
+                                                  <p class="card-text">Ejemplo de JS Vanilla</p>
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                          <!-- <h6 class="card-title"><i class="fa fa-archive" aria-hidden="true"></i>
+                                                <b> Archivos</b></h6>
+                                            <p class="card-text">Contiene: Presentación en PDF </p> -->
+                                            <div class="tarjeta">
+                                                <a href="#">
+                                                    <span>
+                                                      <i class="fa fa-archive fa-3x" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span><h5><b>Archivos</b></h5></span>
+                                                  </a>
+                                                  <p class="card-text">Contiene: Presentación en PDF</p>
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- FIN CARD -->
+                                </div>
+                                <!-- FIN CARDS -->
+                            </div>
+                            <!-- Clase 2 -->
+                            <div class="container mt-3 col-lg-6">
+                                <h6><b>Segunda Clase</b></h6>
+                                <p>En esta clase vimos on the button to toggle between showing and hiding content.</p>
+                                <ul>
+                                    <li>on the button to toggle betwee.</li>
+                                    <li>showing and hiding content</li>
+                                </ul>
+
+                                <button type="button" class="btn btn-js-master btn-block" data-toggle="collapse"
+                                    data-target="#video2Semana3">Material Clase 2</button>
+                                <div id="video2Semana3" class="collapse row">
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                            <!-- <h6 class="card-title"><i class="fa fa-video-camera" aria-hidden="true"></i>
+                                                <b> Video</b></h6> -->
+                                                <div class="tarjeta">
+                                                    <a href="#">
+                                                        <span>
+                                                          <i class="fa fa-video-camera fa-3x" aria-hidden="true"></i>
+                                                        </span>
+                                                        <span><h5><b>Video</b></h5></span>
+                                                      </a>
+                                                      <p class="card-text">Drive de Google</p>
+                                                    </div>
+                                                
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                            <!-- <h6 class="card-title"><i class="fa fa-code" aria-hidden="true"></i>
+                                                <b> Ejercicio</b></h6>
+                                            <p class="card-text">Ejemplo de JS Vanilla</p> -->
+                                            <div class="tarjeta">
+                                                <a href="#">
+                                                    <span>
+                                                      <i class="fa fa-code fa-3x" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span><h5><b>Ejercicio</b></h5></span>
+                                                  </a>
+                                                  <p class="card-text">Ejemplo de JS Vanilla</p>
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- CARD -->
+                                    <div class="card col-lg-4" style="width:150px">
+                                        <div class="card-body">
+                                            <!-- <h6 class="card-title"><i class="fa fa-archive" aria-hidden="true"></i>
+                                                <b> Archivos</b></h6>
+                                            <p class="card-text">Contiene: Presentación en PDF </p> -->
+                                            <div class="tarjeta">
+                                                <a href="#">
+                                                    <span>
+                                                      <i class="fa fa-archive fa-3x" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span><h5><b>Archivos</b></h5></span>
+                                                  </a>
+                                                  <p class="card-text">Contiene: Presentación en PDF</p>
+                                                </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <!-- FIN CARD -->
+                                </div>
+                                <!-- FIN CARDS -->
+                            </div>
+                            <!-- FIN CLASE 2 -->
+                        </div>
+                        <!-- FIN CONTENEDOR -->
+                    </div>
+                    <!-- FIN ACORDEON BOODY -->
+                </div>
+                <!-- FIN COLLABSE -->
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <br>
+        <h5>El curso inicio el <b>{{infoCourse.fecha | date: 'dd/MM/yy'}}</b> y finalizo el <b>{{finalizoCurso}}</b> </h5>
+    </div>

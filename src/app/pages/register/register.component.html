@@ -1,0 +1,83 @@
+<div class="row ">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="../../../assets/escalab.png"
+                    id="icon" alt="User Icon" />
+            </div>
+
+            <!-- Login Form -->
+            <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+                <input formControlName="email" type="text" autocomplete="off" class="fadeIn second"
+                    placeholder="correo@ejemplo.com" s>
+                <div class="mb-3" *ngIf="formRegister.get('email').errors  && formRegister.get('email').dirty">
+                    <span class="spanAlert" *ngIf="formRegister.get('email').hasError('required')">
+                        Campo requerido
+                    </span>
+                    <span class="spanAlert" *ngIf="formRegister.get('email').errors.pattern">
+                        El formato de correo no es valido
+                    </span>
+                </div>
+
+                <input formControlName="nombre" type="text" autocomplete="off" class="fadeIn third"
+                    placeholder="Pepito Perez" s>
+                <div class="mb-3" *ngIf="formRegister.get('nombre').errors  && formRegister.get('nombre').dirty">
+                    <span class="spanAlert" *ngIf="formRegister.get('nombre').hasError('required')">
+                        Campo requerido
+                    </span>
+                    <span class="spanAlert" *ngIf="formRegister.get('nombre').hasError('minlength')">
+                        Minimo debe tener 6 caracteres
+                    </span>
+                </div>
+
+                <input formControlName="fechaNacimiento" type="date" autocomplete="off" class="fadeIn fourth">
+                <div class="mb-3" *ngIf="formRegister.get('fechaNacimiento').errors  && formRegister.get('fechaNacimiento').dirty">
+                    <span class="spanAlert" *ngIf="formRegister.get('fechaNacimiento').hasError('required')">
+                        Campo requerido
+                    </span>
+                </div>
+
+                <input formControlName="sueldo" type="number" autocomplete="off" class="fadeIn five"
+                    placeholder="100000" s>
+                <div class="mb-3" *ngIf="formRegister.get('sueldo').errors  && formRegister.get('sueldo').dirty">
+                    <span class="spanAlert" *ngIf="formRegister.get('sueldo').hasError('required')">
+                        Campo requerido
+                        <br>
+                    </span>
+                    <span class="spanAlert" *ngIf="formRegister.get('password').errors.pattern">
+                        Debe ser solo numero y tener minimo 4 digitos
+                     </span>
+
+                </div>
+
+                <input formControlName="password" type="password" autocomplete="off" class="fadeIn six" id="password"
+                placeholder="*************">
+                <div class="mb-3" *ngIf="formRegister.get('password').errors  && formRegister.get('password').dirty">
+                        <span class="spanAlert" *ngIf="formRegister.get('password').hasError('required')">
+                            Campo requerido
+                        </span>
+                        <span class="spanAlert" *ngIf="formRegister.get('password').hasError('minlength')">
+                            Minimo debe tener 8 caracteres
+                        </span>
+                        <span class="spanAlert" *ngIf="formRegister.get('password').hasError('maxlength')">
+                            Maximo debe tener 10 caracteres
+                        </span>
+                        <span class="spanAlert" *ngIf="formRegister.get('password').errors.pattern">
+                           Debe tener mayusculas, minusculas, numeros y caracteres especiales
+                        </span>
+                    </div>
+                <button type="submit" [disabled]="!formRegister.valid" class="fadeIn six" >Ingresar</button>
+               
+
+           
+            </form>
+            <h6 >¿Ya eres estudiante de escalab?</h6>
+            <h6 >Da clic <a href="/login">aquí</a></h6>
+            <br>
+        </div>
+    </div>
+
+</div>

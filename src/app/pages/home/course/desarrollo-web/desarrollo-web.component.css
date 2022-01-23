@@ -1,0 +1,112 @@
+
+.container a{
+    color: #03cf9f;
+}
+.container span{
+    color: #EF662A;
+}
+.container span h5{
+    color: #000;
+}
+.container h2{
+    color: #10172A;
+}
+
+/* BOTONES */
+.btn-desarrollo-web{
+    background-color: #ff3060;
+    color: #fff;
+}
+.btn-desarrollo-web:hover{
+    background-color: #ff3060b2;
+    font-weight: bold;
+}
+.btn-desarrollo-web:focus{
+    background-color: #EF662A;
+    color: #fff;
+}
+
+.btn-desarrollo-web:focus :hover{
+    background-color: #ff306071;
+    font-weight: bold;
+}
+/* ACORDEONES */
+.card-header{
+    background-color: #10172A;
+}
+.card-body.card{
+    background-color: #515e76;
+    color: #fff;
+}
+.card{
+    background-color: #515e76;
+    color: #fff;
+    border: 1px solid;
+}
+/* CONTENIDOS DE CURSO */
+
+.tarjeta {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .tarjeta a span:first-child {
+    display: inline-block;
+    padding: 10px;
+  }
+  .tarjeta a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tarjeta a span:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+  }
+  .tarjeta a span {
+    transition: transform 0.2s ease-out;
+  }
+  
+  .tarjeta a:hover span:first-child {
+    transform: translateY(100%);
+  }
+  
+  .tarjeta a:hover span:last-child {
+    transform: none;
+  }
+
+  /* ANIMACIONE */
+  
+  .tarjeta[data-animation="to-top"] a span:last-child {
+    transform: translateY(100%);
+  }
+  
+  .tarjeta[data-animation="to-top"] a:hover span:first-child {
+    transform: translateY(-100%);
+  }
+  
+  
+  .tarjeta[data-animation="to-left"] a span:last-child {
+    transform: translateX(100%);
+  }
+  
+  .tarjeta[data-animation="to-left"] a:hover span:first-child {
+    transform: translateX(-100%); 
+  }
+  .tarjeta[data-animation="to-right"] a span:last-child {
+    transform: translateX(-100%);
+  }
+  
+  .tarjeta[data-animation="to-right"] a:hover span:first-child {
+    transform: translateX(100%);
+  }
+

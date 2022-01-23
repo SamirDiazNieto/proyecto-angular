@@ -1,0 +1,45 @@
+<div class="row ">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="https://images.credly.com/size/340x340/images/aec0b6e8-e002-49c5-a3c9-5cf79adf649f/blob.png"
+                    id="icon" alt="User Icon" />
+            </div>
+
+            <!-- Login Form -->
+            <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+                <input formControlName="email" type="text" autocomplete="off" class="fadeIn second"
+                    placeholder="correo@ejemplo.com" s>
+                <div class="mb-3" *ngIf="formLogin.get('email').errors  && formLogin.get('email').dirty">
+                    <span class="spanAlert" *ngIf="formLogin.get('email').hasError('required')">
+                        Campo requerido
+                    </span>
+                    <span class="spanAlert" *ngIf="formLogin.get('email').errors.pattern">
+                        El formato de correo no es valido
+                    </span>
+                </div>
+                <input formControlName="password" type="password" autocomplete="off" class="fadeIn third" id="password"
+                    placeholder="*************">
+                    <div class="mb-3" *ngIf="formLogin.get('password').errors  && formLogin.get('password').dirty">
+                        <span class="spanAlert" *ngIf="formLogin.get('password').hasError('required')">
+                            Campo requerido
+                        </span>
+                        <span class="spanAlert" *ngIf="formLogin.get('password').hasError('minlength')">
+                            Minimo debe tener 8 caracteres
+                        </span>
+                        <span class="spanAlert" *ngIf="formLogin.get('password').hasError('maxlength')">
+                            Maximo debe tener 10 caracteres
+                        </span>
+                    </div>
+                <button type="submit" [disabled]="!formLogin.valid" class="fadeIn fourth" >Ingresar</button>
+            </form>
+            <h6>¿Aún no eres estudiante de escalab?</h6>
+            <h6>Da clic <a href="/register">aquí</a></h6>
+            <br>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,80 @@
+<div class="row ">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="https://i0.wp.com/danidron.com/wp-content/uploads/2021/07/escalab.jpg?fit=744%2C400&ssl=1"
+                    id="icon" alt="User Icon" />
+            </div>
+
+            <!-- Login Form -->
+            <form [formGroup]="formUpdateUser" (ngSubmit)="onSubmit()">
+                <input formControlName="email" type="text" autocomplete="off" class="fadeIn second"
+                    placeholder="correo@ejemplo.com" s>
+                <div class="mb-3" *ngIf="formUpdateUser.get('email').errors  && formUpdateUser.get('email').dirty">
+                    <span class="spanAlert" *ngIf="formUpdateUser.get('email').hasError('required')">
+                        Campo requerido
+                    </span>
+                    <span class="spanAlert" *ngIf="formUpdateUser.get('email').errors.pattern">
+                        El formato de correo no es valido
+                    </span>
+                </div>
+
+                <input formControlName="nombre" type="text" autocomplete="off" class="fadeIn third"
+                    placeholder="Pepito Perez" s>
+                <div class="mb-3" *ngIf="formUpdateUser.get('nombre').errors  && formUpdateUser.get('nombre').dirty">
+                    <span class="spanAlert" *ngIf="formUpdateUser.get('nombre').hasError('required')">
+                        Campo requerido
+                    </span>
+                    <span class="spanAlert" *ngIf="formUpdateUser.get('nombre').hasError('minlength')">
+                        Minimo debe tener 6 caracteres
+                    </span>
+                </div>
+
+                <input formControlName="fechaNacimiento" type="date" autocomplete="off" class="fadeIn fourth">
+                <div class="mb-3" *ngIf="formUpdateUser.get('fechaNacimiento').errors  && formUpdateUser.get('fechaNacimiento').dirty">
+                    <span class="spanAlert" *ngIf="formUpdateUser.get('fechaNacimiento').hasError('required')">
+                        Campo requerido
+                    </span>
+                </div>
+
+                <input formControlName="sueldo" type="number" autocomplete="off" class="fadeIn five"
+                    placeholder="100000" s>
+                <div class="mb-3" *ngIf="formUpdateUser.get('sueldo').errors  && formUpdateUser.get('sueldo').dirty">
+                    <span class="spanAlert" *ngIf="formUpdateUser.get('sueldo').hasError('required')">
+                        Campo requerido
+                        <br>
+                    </span>
+                    <span class="spanAlert" *ngIf="formUpdateUser.get('password').errors.pattern">
+                        Debe ser solo numero y tener minimo 4 digitos
+                     </span>
+
+                </div>
+
+                <input formControlName="password" type="password" autocomplete="off" class="fadeIn six" id="password"
+                placeholder="*************">
+                <div class="mb-3" *ngIf="formUpdateUser.get('password').errors  && formUpdateUser.get('password').dirty">
+                        <span class="spanAlert" *ngIf="formUpdateUser.get('password').hasError('required')">
+                            Campo requerido
+                        </span>
+                        <span class="spanAlert" *ngIf="formUpdateUser.get('password').hasError('minlength')">
+                            Minimo debe tener 8 caracteres
+                        </span>
+                        <span class="spanAlert" *ngIf="formUpdateUser.get('password').hasError('maxlength')">
+                            Maximo debe tener 10 caracteres
+                        </span>
+                        <span class="spanAlert" *ngIf="formUpdateUser.get('password').errors.pattern">
+                           Debe tener mayusculas, minusculas, numeros y caracteres especiales
+                        </span>
+                    </div>
+                <button type="submit" [disabled]="!formUpdateUser.valid" class="fadeIn six" >Ingresar</button>
+               
+
+           
+            </form>
+        </div>
+    </div>
+
+</div>

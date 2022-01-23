@@ -1,0 +1,25 @@
+.tituloAdd{
+    background-color: #03df9f;
+    color: #ffff
+}
+
+.tituloEdit{
+    background-color: #4373de;
+    color: #ffff
+}
+
+.btn-escalab-rojo{
+    background-color: #ff3060;
+    color: #ffff
+}
+.btn-escalab-verde{
+    background-color: #03df9f;
+    color: #ffff
+}
+.btn-escalab-azul{
+    background-color: #4373de;
+    color: #ffff
+}
+.buscador{
+    margin-bottom: 1rem;
+}

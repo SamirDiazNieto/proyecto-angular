@@ -1,0 +1,157 @@
+<div class="row">
+    <div class="col-md-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <span class="badge badge-secondary">
+                        Home
+                    </span>
+                </li>
+                <li class="breadcrumb-item">
+                    <span class="badge badge-success">
+                        Usuarios
+                    </span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="row justify-content-end buscador">
+        <div class="col-4">
+            <input type="search" class="form-control" placeholder="Nombre de Usuario ....." (keyup)="filtrarUsuarios($event)">
+        </div>
+        <div class="col-4">
+            <button class="btn btn-escalab-verde" data-toggle="modal" data-target="#addUser">
+                Agragar Usuarios
+            </button>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre Usuario</th>
+                <th scope="col">Correo Usuario</th>
+                <th scope="col">Fecha de Nacimiento</th>
+                <th scope="col">Contraseña Usuario</th>
+                <th scope="col">Salario</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of usuariosCopia">
+                <th scope="row">{{user.id}}</th>
+                <th scope="row">{{user.nombre}}</th>
+                <th scope="row">{{user.correo}}</th>
+                <th scope="row">{{user.fechaNacimiento | date: 'dd/MM/yy'}}</th>
+                <th scope="row">{{user.contrasena | contrasena:'*'}}</th>
+                <th scope="row">{{user.sueldo | salario}}</th>
+                <th scope="row">
+                    <div class="btn-group">
+                        <!-- pendiente id para editar usuario -->
+                        <button class="btn btn-escalab-azul" data-toggle="modal" data-target="#editUser" (click)="editarUsuario(user)">
+                            Editar
+                        </button>
+                        <button class="btn btn-escalab-rojo" (click)="eliminarUsuario(user.nombre, user.id)">
+                            Eliminar
+                        </button>
+                    </div>
+
+                </th>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal Agregar Usuario -->
+<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header tituloAdd">
+          <h5 class="modal-title" id="addUserLabel">Agregar usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formUser">
+              <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="">Nombre Usuario</label>
+                    <input type="text" class="form-control" placeholder="nombre de usuario" formControlName="nombre">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" placeholder="email de usuario" formControlName="correo">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" formControlName="fechaNacimiento">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Sueldo</label>
+                    <input type="number" class="form-control" placeholder="sueldo" formControlName="sueldo">
+                </div>
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-escalab-rojo" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-escalab-verde" [disabled]="!formUser.valid" (click)="agregarUsuario()">Guardar usuario </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal Editar Usuario -->
+<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header tituloEdit">
+          <h5 class="modal-title" id="editUserLabel">Modificar  usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formUser" >
+              <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="">ID Usuario</label>
+                    <!-- Pendiente reviar ngModel -->
+                    <input type="text" class="form-control"   formControlName="id" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" formControlName="correo" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Nombre Usuario</label>
+                    <input type="text" class="form-control"    formControlName="nombre">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Fecha de nacimiento</label>
+                    <input type="date" class="form-control "  formControlName="fechaNacimiento">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Sueldo</label>
+                    <input type="number" class="form-control"  formControlName="sueldo">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Contraseña</label>
+                    <input type="text" class="form-control"  formControlName="contrasena">
+                </div>
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-escalab-rojo" data-dismiss="modal" (click)="limpiarForm()">Cerrar</button>
+          <!-- <button type="submit" class="btn  btn-escalab-azul" [disabled]="!formUser.valid" (click)="actualizarUsuario()">Actualizar usuario </button> -->
+          <button type="submit" class="btn btn-escalab-azul" [disabled]="!formUser.valid" >Actualizar Usuario </button>
+        </div>
+      </div>
+    </div>
+  </div>

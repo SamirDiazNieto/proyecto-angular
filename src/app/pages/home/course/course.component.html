@@ -1,0 +1,154 @@
+<div class="row">
+    <div class="col-md-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <span class="badge badge-secondary">
+                        Home
+                    </span>
+                </li>
+                <li class="breadcrumb-item">
+                    <span class="badge badge-success">
+                        Cursos
+                    </span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="row justify-content-end buscador">
+        <div class="col-4">
+            <input type="search" class="form-control" placeholder="Nombre de Curso ....." (keyup)="filtrarCursos($event)">
+        </div>
+        <div class="col-4">
+            <button class="btn btn-escalab-verde" data-toggle="modal" data-target="#addCourse" >
+                Agragar Cursos
+            </button>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre Curso</th>
+                <th scope="col">Descripción Curso </th>
+                <th scope="col">Fecha del Curso</th>
+                <th scope="col">Semanas</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let curso of cursosCopia">
+                <th scope="row">{{curso.id}}</th>
+                <th scope="row">{{curso.nombre}}</th>
+                <th scope="row">{{curso.descripcion}}</th>
+                <th scope="row">{{curso.fecha | date: 'dd/MM/yy'}}</th>
+                <th scope="row">{{curso.semanas }}</th>
+                <th scope="row">
+                    <div class="btn-group">
+                        <button class="btn btn-escalab-azul" data-toggle="modal" data-target="#editCourse" (click)="editarCurso(curso)">
+                            Editar
+                        </button>
+                        <button class="btn btn-escalab-rojo" (click)="eliminarCurso(curso.nombre, curso.id)">
+                            Eliminar
+                        </button>
+                        <button class="btn btn-escalab-verde" (click)="detalleCurso(curso)">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                </th>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal Agregar Curso -->
+<div class="modal fade" id="addCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header tituloAdd">
+          <h5 class="modal-title" id="addUserLabel">Agregar curso</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formCourse">
+              <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="">Nombre Curso</label>
+                    <input type="text" class="form-control" placeholder="nombre del curso" formControlName="nombre">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Descripción</label>
+                    <input type="text" class="form-control" placeholder="Descripción del curso" formControlName="descripcion">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Fecha </label>
+                    <input type="date" class="form-control" formControlName="fecha">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Semanas</label>
+                    <input type="number" class="form-control" placeholder="numero de semanas" formControlName="semanas">
+                </div>
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-escalab-rojo" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-escalab-verde" [disabled]="!formCourse.valid" (click)="agregarCurso()">Guardar curso </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal Editar Curso -->
+<div class="modal fade" id="editCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header tituloEdit">
+          <h5 class="modal-title" id="editCourseLabel">Modificar  curso</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formCourse" >
+              <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="">ID Curso</label>
+                    <!-- Pendiente reviar ngModel -->
+                    <input type="text" class="form-control"  value="id" formControlName="id" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Descipción</label>
+                    <input type="text" class="form-control" value="descripcion" formControlName="descripcion" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Nombre Curso</label>
+                    <input type="text" class="form-control"   value="nombre" formControlName="nombre">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Fecha </label>
+                    <input type="date" class="form-control "  formControlName="fecha">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Semanas</label>
+                    <input type="number" class="form-control" value="10000" formControlName="semanas">
+                </div>
+
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-escalab-rojo" data-dismiss="modal" (click)="limpiarForm()">Cerrar</button>
+          <!-- <button type="submit" class="btn  btn-escalab-azu" [disabled]="!formCourse.valid" (click)="actualizarCurso()">Actualizar curso </button> -->
+          <button type="submit" class="btn btn-escalab-azul" [disabled]="!formCourse.valid" >Actualizar curso </button>
+        </div>
+      </div>
+    </div>
+  </div>

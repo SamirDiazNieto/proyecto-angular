@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h2>Mis cursos <a href="https://escalab.academy/" target="_blank"><b class="logoesca">esca</b><b
+                        class="logolab">lab</b></a></h2>
+        </div>
+        <ul class="list-unstyled components">
+            <li>
+                <a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+            </li>
+            <li>
+                <a href="/cursos" ><i class="fa fa-graduation-cap" aria-hidden="true"></i> Mis cursos</a>
+            </li>
+            <li class="">
+                <a href="/usuarios"><i class="fa fa-users" aria-hidden="true"></i> Compañeros</a>
+            </li>
+            <li>
+                <a href="/mis-datos"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Actualizar mis Datos</a>
+            </li>
+        </ul>
+        <br>
+        <button type="button" class="logout btn  btn-lg btn-block" (click)="cerrarSesion()"><i class="fa fa-sign-out" aria-hidden="true"></i>
+            Cerrar Sesión</button>
+    </nav>
+    <!-- Page Content  -->
+    <div id="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
